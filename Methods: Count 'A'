@@ -1,0 +1,18 @@
+Write a method count_a(word) that takes in a string word and returns the number of a's in the word. The method should count both lowercase (a) and uppercase (A)
+
+def count_a(word)
+  aCount = 0
+  count = 0 
+  while count <= word.length
+    if word[count] == 'a' || word[count] == 'A'
+      aCount +=1
+    end
+    count +=1
+  end
+puts aCount
+end
+
+puts count_a("application")  # => 2
+puts count_a("bike")         # => 0
+puts count_a("Arthur")       # => 1
+puts count_a("Aardvark")     # => 3
