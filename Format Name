@@ -1,0 +1,20 @@
+Write a method format_name that takes in a name string and returns the name properly capitalized.
+
+
+
+# Hint: use str.upcase and str.downcase
+# "abc".upcase # => "ABC"
+
+def format_name(str)
+str = str.split(" ")
+  count = 0 
+  newName = []
+  while count < str.length
+    newName << str[count][0].upcase + str[count][1..-1].downcase
+    count +=1
+  end
+  return newName.join(" ")
+end
+
+puts format_name("chase WILSON") # => "Chase Wilson"
+puts format_name("brian CrAwFoRd scoTT") # => "Brian Crawford Scott"
