@@ -1,0 +1,19 @@
+Write a method select_odds(numbers) that takes in an array of numbers and returns a new array containing the odd numbers of the original array.
+
+
+
+def select_odds(numbers)
+array = []
+  count = 0 
+  while count < numbers.length
+    if numbers[count] %2 == 1
+      array << numbers[count]
+    end
+    count +=1 
+  end
+  return array
+end
+
+print select_odds([13, 4, 3, 7, 6, 11]) # => [13, 3, 7, 11]
+puts
+print select_odds([2, 4, 6])            # => []
