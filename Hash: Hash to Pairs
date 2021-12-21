@@ -1,0 +1,14 @@
+Write a method frequent_letters that takes in a string and returns an array containing the characters that appeared more than twice in the string.
+
+def hash_to_pairs(hash)
+pairs = []
+  hash.each do |k,v|
+    pairs << [k, v]
+  end
+  return pairs
+end
+
+
+print hash_to_pairs({"name"=>"skateboard", "wheels"=>4, "weight"=>"7.5 lbs"}) #=> [["name", "skateboard"], ["wheels", 4], ["weight", "7.5 lbs"]]
+puts
+
