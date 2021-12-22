@@ -1,0 +1,25 @@
+Write a method pick_primes that takes in an array of numbers and returns a new array containing only the prime numbers.
+
+
+def pick_primes(numbers)
+newArr = numbers.select{ |i| is_prime(i)}
+end
+
+def is_prime(number)
+  divisors = []
+  (1..number/2).each do |num|
+    if number% num == 0 
+      divisors << num
+    end
+  end
+  if divisors.length*2 > 2
+    return false
+  else
+    return true
+  end
+end
+
+print pick_primes([2, 3, 4, 5, 6]) #=> [2, 3, 5]
+puts
+print pick_primes([101, 20, 103, 2017]) #=> [101, 103, 2017]
+puts
