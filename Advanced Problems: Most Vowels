@@ -25,3 +25,29 @@ end
 print most_vowels("what a wonderful life") #=> "wonderful"
 puts
 print most_vowels ("I am super dooper serious")
+
+
+===========Better Code================
+def most_vowels(sentence)
+hash = {}
+  sentence= sentence.split(" ")
+  sentence.each do |word|
+    hash[word] = vowel_count(word)
+  end
+  hash = hash.sort_by {|k,v| v}
+  return hash[-1][0]
+end
+
+def vowel_count(word)
+  vowels = 'aeiou'
+  count = 0 
+  word.each_char do |let|
+    if vowels.include?(let)
+      count +=1
+    end
+  end
+  return count
+end
+    
+
+print most_vowels("what a wonderful life") #=> "wonderful"
