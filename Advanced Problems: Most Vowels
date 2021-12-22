@@ -1,0 +1,27 @@
+Write a method most_vowels that takes in a sentence string and returns the word of the sentence that contains the most vowels.
+
+
+def most_vowels(sentence)
+newWord = ""
+  vowelCount = 0
+  vowels = 'aeiou'
+  sentence = sentence.split(" ")
+  sentence.each do |word|
+    tempVowel = 0
+    word.each_char do |let|
+      if vowels.include?(let)
+        tempVowel +=1
+      end
+      end
+      if tempVowel > vowelCount
+        newWord = word
+        vowelCount = tempVowel
+      end
+  end
+  return newWord
+  
+end
+
+print most_vowels("what a wonderful life") #=> "wonderful"
+puts
+print most_vowels ("I am super dooper serious")
