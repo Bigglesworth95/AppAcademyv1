@@ -1,0 +1,40 @@
+Write a method anagrams? that takes in two words and returns a boolean indicating whether or not the words are anagrams. 
+Anagrams are words that contain the same characters but not necessarily in the same order. Solve this without using .sort
+
+
+def anagrams?(word1, word2)
+  if word1.length!= word2.length
+    return false
+  end
+word1.each_char do |let|
+  if word2.include?(let)
+    word2.delete(let)
+  else
+    return false
+  end
+end
+return true
+end
+
+puts anagrams?("cat", "act")          #=> true
+puts anagrams?("restful", "fluster")  #=> true
+puts anagrams?("cat", "dog")          #=> false
+puts anagrams?("boot", "bootcamp")    #=> false
+
+==============Better Code ===========
+def anagrams?(word1, word2)
+  return hashing(word1) == hashing(word2)
+end
+
+def hashing(word)
+  count = Hash.new(0)
+  word.each_char do |let|
+    count[let] +=1
+  end
+  return count
+end
+
+puts anagrams?("cat", "act")          #=> true
+puts anagrams?("restful", "fluster")  #=> true
+puts anagrams?("cat", "dog")          #=> false
+puts anagrams?("boot", "bootcamp")    #=> false
