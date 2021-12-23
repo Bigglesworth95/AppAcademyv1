@@ -1,0 +1,34 @@
+def vowel_cipher(string)
+vowels = 'aeiou'
+  newStr = ""
+  string.each_char do |let|
+    if vowels.include?(let)
+      idx = vowels.index(let)
+      newStr += vowels[(idx+1)%vowels.length]
+  else
+    newStr += let
+  end
+end
+return newStr
+end
+
+puts vowel_cipher("bootcamp") #=> buutcemp
+puts vowel_cipher("paper cup") #=> pepir cap
+
+=========== With Map ============
+def vowel_cipher(string)
+vowels = 'aeiou'
+  
+  newStr = string.split("").map do |let|
+    if vowels.include?(let)
+      idx = vowels.index(let)
+      vowels[(idx+1)%vowels.length]
+    else
+      let
+    end
+  end
+  return newStr.join("")
+end
+
+puts vowel_cipher("bootcamp") #=> buutcemp
+puts vowel_cipher("paper cup") #=> pepir cap
