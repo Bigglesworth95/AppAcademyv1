@@ -1,0 +1,40 @@
+Write a method consonant_cancel that takes in a sentence and returns a new sentence where every word begins with it's first vowel.
+
+
+def consonant_cancel(sentence)
+sentence = sentence.split(" ")
+  newSentence =[]
+  vowels = 'aeiou'
+  sentence.each do |word|
+    word.each_char.with_index do |let, idx|
+      if vowels.include?(let)
+        word = word[idx..-1]
+        newSentence << word
+        break
+      end
+    end
+  end
+  return newSentence.join(" ")
+end
+
+puts consonant_cancel("down the rabbit hole") #=> "own e abbit ole"
+puts consonant_cancel("writing code is challenging") #=> "iting ode is allenging"
+==========Better Code ==========
+
+def consonant_cancel(sentence)
+sentence = sentence.split(" ")
+  newSentence = sentence.map { |word| first_vowel(word)}
+  return newSentence.join(" ")
+end
+
+def first_vowel(word)
+  vowels = 'aeiou'
+  word.each_char.with_index do |let, idx|
+    if vowels.include?(let)
+      return word[idx..-1]
+    end
+  end
+end
+
+puts consonant_cancel("down the rabbit hole") #=> "own e abbit ole"
+puts consonant_cancel("writing code is challenging") #=> "iting ode is allenging"
