@@ -1,3 +1,4 @@
+#this was a given spec file. I did not write this. 
 require "part_1"
 
 describe "Part 1:" do
