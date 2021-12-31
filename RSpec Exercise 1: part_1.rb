@@ -1,3 +1,4 @@
+#This sheet was empty. The task was to run rspec, read the errors, and then devise this sheet based on the error output. 
 def average(num1, num2)
   (num1.to_f+num2.to_f)/2.0
 end
