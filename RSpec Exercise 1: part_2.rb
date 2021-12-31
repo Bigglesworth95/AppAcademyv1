@@ -1,3 +1,5 @@
+#This sheet was empty. The task was to run rspec, read the errors, and then devise this sheet based on the error output. 
+
 def hipsterfy(str)
   vowels = 'aeiou'
   i = str.length() -1
