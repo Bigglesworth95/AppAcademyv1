@@ -1,3 +1,4 @@
+#the goal was to devise this code by following and correcting the errors printed when running rspec. 
 def partition(arr, num)
   less = []
   more = []
