@@ -1,6 +1,8 @@
 # Run `bundle exec rspec` and satisy the specs.
 # You should implement your methods in this file.
 # Feel free to use the debugger when you get stuck.
+
+#used byebug & rspec to write and debug various functions outlined via provided rspec files. 
 require "byebug"
 
 def prime(num)
