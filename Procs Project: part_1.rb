@@ -1,3 +1,4 @@
+#an empty page, created by following rspec
 def my_map(arr, &prc)
   newArray = []
   arr.each {|ele| newArray << prc.call(ele)}
