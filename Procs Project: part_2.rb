@@ -1,3 +1,4 @@
+#an empty page, created by following rspec
 def reverser(str, &prc)
   str = str.reverse
   str = prc.call(str)
