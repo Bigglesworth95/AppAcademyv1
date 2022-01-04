@@ -1,3 +1,4 @@
+#as with others, this code was written by debugging an empty page via rspec. 
 def select_even_nums(arr)
 arr.select(&:even?)
 end
