@@ -1,3 +1,4 @@
+#this ran in tandem with a provided script & room.rb, allowing you to 'run a hotel'. This was written by me, though. 
 require_relative "room"
 
 class Hotel
