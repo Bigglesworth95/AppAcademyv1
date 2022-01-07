@@ -1,3 +1,4 @@
+#this ran in tandem with a provided script, allowing you to play the guessing game. This was written by me, though. 
 class GuessingGame
   def initialize(min, max)
     @secret_num = rand(min..max)
