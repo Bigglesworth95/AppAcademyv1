@@ -1,3 +1,4 @@
+#works in tandem with startup. 
 class Employee
   attr_reader :name, :title
 
