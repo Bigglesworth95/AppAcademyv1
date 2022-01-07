@@ -1,3 +1,4 @@
+#this ran in tandem with a provided script, allowing you to play hangman. This was written by me, though. 
 class Hangman
   DICTIONARY = ["cat", "dog", "bootcamp", "pizza"]
   def self.random_word
