@@ -1,3 +1,4 @@
+#works in tandem with employee
 require_relative "employee"
 class Startup
   attr_reader :name, :funding, :salaries, :employees
