@@ -1,3 +1,5 @@
+#this ran in tandem with a provided script & hotel.rb, allowing you to 'run a hotel'. This was written by me, though. 
+
 class Room
   def initialize(capacity)
     @capacity = capacity
