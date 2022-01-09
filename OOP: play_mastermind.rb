@@ -1,3 +1,5 @@
+#to run in tandem with mastermind and code. I did not write this. 
+
 # No need to change or write any code in this file.
 #
 # After you complete all specs, you can simulate your game by
