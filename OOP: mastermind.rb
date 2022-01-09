@@ -1,4 +1,4 @@
-#to run in tandem with mastermind and play_mastermind. I wrote this. 
+#to run in tandem with code and play_mastermind. I wrote this. 
 
 require_relative "code"
 
