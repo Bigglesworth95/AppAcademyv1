@@ -1,3 +1,4 @@
+#to run in tandem with mastermind and play_mastermind. I wrote this. 
 class Code
   POSSIBLE_PEGS = {
     "R" => :red,
