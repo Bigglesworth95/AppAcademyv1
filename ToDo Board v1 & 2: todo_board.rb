@@ -1,3 +1,5 @@
+#I didn't make a v2 for this one because I honestly like how this one runs more than the one suggested by App Academy. Their's requires you to input all data and args 
+#from a single gets, which is confusing and impractical. 
 require_relative "list"
 class TodoBoard
   def initialize(label)
