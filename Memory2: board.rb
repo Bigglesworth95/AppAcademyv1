@@ -1,3 +1,5 @@
+#this is copied from the solution. I was able to work out everything but cpu player independetly within
+#the alotted time limit. 
 require_relative "card.rb"
 require "byebug"
 class Board
