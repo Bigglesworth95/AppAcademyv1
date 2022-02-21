@@ -1,77 +1,53 @@
 require_relative "board.rb"
-require_relative "human_player.rb"
-require_relative "computer_player.rb"
-require 'byebug'
 class Game
-  attr_reader :player
-  def initialize(player, size=4)
-    @board = Board.new(size)
-    @previous_guess = nil
-    @player = player
+  def initialize(file)
+    @board = Board.new(file)
   end
 
-  def compare_guess(new_guess)
-    if previous_guess
-      if match?(previous_guess, new_guess)
-        player.receive_match(previous_guess, new_guess)
-      else
-        puts "Try again"
-        [previous, guess, new_guess].each { |pos| board.hide(pos)}
-      end
-      self.previous_guess = nil
-      player.previous_guess = nil
-    else
-      self.previous_guess = new_guess
-      player.previous_guess = new_guess
-    end
+  def prompt_position
+    p "Pick a position in the format, Y X"
   end
 
-  def get_player_input
-    pos = nil
-
-    until pos && valid_pos?(pos)
-      pos = player.get_input
-    end
-
-    pos
-  end
-
-  def make_guess(pos)
-    revealed_value = board.reveal(pos)
-    player.receive_revealed_card(pos, revealed_Value)
-    board.render
-
-    compare_guess(pos)
-
-    sleep(1)
-    board.render
-  end
-
-  def match?(pos1, pos2)
-    board[pos1] == board[pos2]
-  end
-
-  def play
-    until board.won?
-      board.render
-      pos = get_player_input
-      make_guess(pos)
-    end
-
-    puts "Congratulations, you win!"
+  def prompt_value
+    p "what value do you want to put there?"
   end
 
   def valid_pos?(pos)
-    pos.is_a?(Array) && pos.count == 2 && pos.all? {|x| x.between?(0, board.size-1)}
+    pos.is_a?(Array) &&
+      pos.length == 2 &&
+      pos.all? { |x| x.between?(0, board.size - 1) }
   end
 
-  private
+  def get_position
+    move = nil
+    until valid_pos(move)
+      move = gets.chomp
+      move = move.split(" ")
+      move = move.map {|i| i.to_i}
+    end
+    move
+  end
 
-  attr_accessor :previous_guess
-  attr_reader :board
+  def get_value
+    value = gets.chomp
+    value = value.to_i
+  end
+
+  def play
+    until @board.solved?
+      @board.render
+      prompt_position
+      position = get_position
+      prompt_value
+      value = get_value
+      #debugger
+      @board[position] = value
+    end
+    p 'Win!'
+  end
+
 end
 
-if $PROGRAM_NAME == __FILE__
-  size = ARGV.empty? ? 4 : ARGV.shift.to_i
-  MemoryGame.new(ComputerPlayer.new(size), size).play
-end
+g1 = Game.new("./puzzles/sudoku1.txt")
+g2 = Game.new("./puzzles/sudoku1_almost.txt")
+g2.play
