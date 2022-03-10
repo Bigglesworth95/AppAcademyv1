@@ -1,4 +1,4 @@
-#note: this was made by me with no info whatsoever on maze solving. This is why it's so bad. 
+#note: this was made by me with no info whatsoever on maze solving. This is why it's does not follow best practices. 
 require "byebug"
 def createMaze1
   maze = []
